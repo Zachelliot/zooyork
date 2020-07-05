@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>addEventListener</title>
+        <script src="jquery/jquery-3.5.0.min.js"></script>
+        <style>
+            #div1{
+               width: 150px;
+               height: 100px;
+               background: green;
+            }
+            #div2{
+               width: 150px;
+               height: 100px;
+               background: red;
+               display: none;
+            }
+            #div3{
+               width: 150px;
+               height: 100px;
+               background: blue;
+               display: none;
+            }
+            #div1,#div2,#div3{
+                float: left;
+                position: relative;
+                left:100px;
+                top: 10px;
+            }
+            button{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+    <button id="green">green</button>
+    <button id="red">red</button>
+    <button id="blue">blue</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    <script>
+    document.getElementById("green").addEventListener("click", function(){
+        $("#div1").show();
+        $("#div2").hide();
+        $("#div3").hide();
+    })
+    document.getElementById("red").addEventListener("click", function(){
+        $("#div2").show();
+        $("#div1").hide();
+        $("#div3").hide();
+    })
+    document.getElementById("blue").addEventListener("click", function(){
+        $("#div3").show();
+        $("div1").hide();
+        $("#div2").hide();
+    })
+    </script>
+    </body>
+</html>
